@@ -1,5 +1,5 @@
 # Build next dependencies
-FROM node:23.1
+FROM node:23.11.0
 WORKDIR /app
 
 COPY package*.json ./
