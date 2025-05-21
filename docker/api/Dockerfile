@@ -1,5 +1,5 @@
 # Build python dependencies
-FROM python:3.10.12-slim as pybuilder
+FROM python:3.13.3-slim as pybuilder
 
 RUN apt update && apt install -y uvicorn
 RUN python -m pip --no-cache-dir install pdm
@@ -13,7 +13,7 @@ RUN pdm install
 COPY ./api/ /project/app/api
 
 # Create final image
-FROM python:3.10.12-slim
+FROM python:3.13.3-slim
 
 RUN apt-get update
 RUN apt-get install -y wget gnupg supervisor
